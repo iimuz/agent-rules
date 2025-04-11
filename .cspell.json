@@ -1,7 +1,15 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["iimuz"],
+  "words": [
+    "clinerules",
+    "iimuz",
+    "zunda"
+  ],
   "dictionaries": [],
-  "ignorePaths": ["**/.git/**", "**/node_modules/**", "**/package-lock.json"]
+  "ignorePaths": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/package-lock.json"
+  ]
 }
