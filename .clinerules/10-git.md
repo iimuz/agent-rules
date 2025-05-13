@@ -1,221 +1,221 @@
-# Git ワークフロー
+# Git Workflow
 
-このドキュメントでは、コミットとプルリクエストの作成に関するベストプラクティスを説明します。
+This document describes best practices for creating commits and pull requests.
 
-## コミットの作成
+## Creating Commits
 
-コミットを作成する際は、以下の手順に従います：
+Follow these steps when creating commits:
 
-1. 変更の確認
+1. Confirm Changes
 
    ```bash
-   # 未追跡ファイルと変更の確認
+   # Check untracked files and changes
    git status
 
-   # 変更内容の詳細確認
+   # Check details of changes
    git diff
 
-   # コミットメッセージのスタイル確認
+   # Check commit message style
    git log
    ```
 
-2. 変更の分析
-   - 変更または追加されたファイルの特定
-   - 変更の性質（新機能、バグ修正、リファクタリングなど）の把握
-   - プロジェクトへの影響評価
-   - 機密情報の有無確認
-3. コミットメッセージの作成
-   - 「なぜ」に焦点を当てる
-   - 明確で簡潔な言葉を使用
-   - 変更の目的を正確に反映
-   - 一般的な表現を避ける
-4. コミットの実行
+2. Analyze Changes
+   - Identify changed or added files
+   - Understand the nature of the change (new feature, bug fix, refactoring, etc.)
+   - Evaluate the impact on the project
+   - Check for sensitive information
+3. Create Commit Message
+   - Focus on "why"
+   - Use clear and concise language
+   - Accurately reflect the purpose of the change
+   - Avoid generic expressions
+4. Execute Commit
 
    ```bash
-   # 関連ファイルのみをステージング
+   # Stage only relevant files
    git add <files>
 
-   # コミットメッセージの作成（HEREDOCを使用）
+   # Create commit message (using HEREDOC)
    git commit -m "$(cat <<'EOF'
-   :art: ユーザー認証にResult型を導入
+   :art: Introduce Result type for user authentication
 
-   - エラー処理をより型安全に
-   - エラーケースの明示的な処理を強制
-   - テストの改善
+   - Make error handling more type-safe
+   - Enforce explicit handling of error cases
+   - Improve tests
 
-   🤖 ${K4}で生成
+   🤖 Generated with ${K4}
    Co-Authored-By: Claude noreply@anthropic.com
    EOF
    )"
    ```
 
-## プルリクエストの作成
+## Creating Pull Requests
 
-プルリクエストを作成する際は、以下の手順に従います：
+Follow these steps when creating pull requests:
 
-1. ブランチの状態確認
+1. Check Branch Status
 
    ```bash
-   # 未コミットの変更確認
+   # Check for uncommitted changes
    git status
 
-   # 変更内容の確認
+   # Check changes
    git diff
 
-   # mainからの差分確認
+   # Check differences from main
    git diff develop...HEAD
 
-   # コミット履歴の確認
+   # Check commit history
    git log
    ```
 
-2. 変更の分析
-   - develop から分岐後のすべてのコミットの確認
-   - 変更の性質と目的の把握
-   - プロジェクトへの影響評価
-   - 機密情報の有無確認
-3. プルリクエストの作成
+2. Analyze Changes
+   - Check all commits since branching from develop
+   - Understand the nature and purpose of the changes
+   - Evaluate the impact on the project
+   - Check for sensitive information
+3. Create Pull Request
 
    ```bash
-   # プルリクエストの作成（HEREDOCを使用）
-   gh pr create --title ":art: Result型によるエラー処理の改善" --body "$(cat <<'EOF'
-   ## 変更に関連する URL
+   # Create pull request (using HEREDOC)
+   gh pr create --title ":art: Improve error handling with Result type" --body "$(cat <<'EOF'
+   ## Related URLs
 
-   ## 変更点
+   ## Changes
 
-   - neverthrowを使用したResult型の導入
-   - エラーケースの明示的な型定義
-   - テストケースの追加
+   - Introduction of Result type using neverthrow
+   - Explicit type definition for error cases
+   - Addition of test cases
 
-   ## 動作確認結果
+   ## Confirmation Results
 
-   <!-- 動作確認の前提条件、手順、結果があれば記載する -->
+   <!-- Describe preconditions, steps, and results of confirmation if any -->
 
-   ## レビューポイント
+   ## Review Points
 
-   - Result型の使用方法が適切か
-   - エラーケースの網羅性
-   - テストの十分性
+   - Is the Result type used appropriately?
+   - Comprehensiveness of error cases
+   - Sufficiency of tests
 
-   ## 制限事項
+   ## Limitations
 
-   <!-- 本変更での既知の制限や別 PR での対応事項があれば記載する -->
+   <!-- Describe known limitations of this change or items to be addressed in a separate PR if any -->
    EOF
    )"
    ```
 
-## 重要な注意事項
+## Important Notes
 
-1. コミット関連
-   - 可能な場合は `git commit -am` を使用
-   - 関係ないファイルは含めない
-   - 空のコミットは作成しない
-   - git 設定は変更しない
-2. プルリクエスト関連
-   - 必要に応じて新しいブランチを作成
-   - 変更を適切にコミット
-   - リモートへのプッシュは `-u` フラグを使用
-   - すべての変更を分析
-3. 避けるべき操作
-   - 対話的な git コマンド（-i フラグ）の使用
-   - リモートリポジトリへの直接プッシュ
-   - git 設定の変更
+1. Commit Related
+   - Use `git commit -am` when possible
+   - Do not include unrelated files
+   - Do not create empty commits
+   - Do not change git settings
+2. Pull Request Related
+   - Create a new branch if necessary
+   - Commit changes appropriately
+   - Use the `-u` flag when pushing to remote
+   - Analyze all changes
+3. Operations to Avoid
+   - Using interactive git commands (-i flag)
+   - Pushing directly to the remote repository
+   - Changing git settings
 
-## コミットメッセージの例
+## Commit Message Examples
 
 ```bash
-# 新機能の追加
-:sparkles: Result型によるエラー処理の導入
+# Add new feature
+:sparkles: Introduce Result type for error handling
 
-# 既存機能の改善
-:art: キャッシュ機能のパフォーマンス改善
+# Improve existing feature
+:art: Improve cache feature performance
 
-# バグ修正
-:bug: 認証トークンの期限切れ処理を修正
+# Fix bug
+:bug: Fix authentication token expiration handling
 
-# リファクタリング
-:recycle: Adapterパターンを使用して外部依存を抽象化
+# Refactor
+:recycle: Abstract external dependencies using Adapter pattern
 
-# テスト追加
-:white_check_mark: Result型のエラーケースのテストを追加
+# Add tests
+:white_check_mark: Add tests for Result type error cases
 
-# ドキュメント更新
-:memo: エラー処理のベストプラクティスを追加
+# Update documentation
+:memo: Add best practices for error handling
 ```
 
-先頭のプレフィックスは、以下を利用する。
+Use the following prefixes:
 
-- `:art:`: コードの構造・フォーマットを改善
-- `:zap:`: パフォーマンスを改善
-- `:fire:`: コードやファイルを削除
-- `:bug:`: バグを修正
-- `:ambulance:`: 緊急のホットフィックス
-- `:sparkles:`: 新機能を導入
-- `:memo:`: ドキュメントを追加または更新
-- `:lipstick:`: UI やスタイルファイルを追加または更新
-- `:white_check_mark:`: テストを追加、更新、またはパス
-- `:lock:`: セキュリティやプライバシーの問題を修正
-- `:rotating_light:`: コンパイラ/リンターの警告を修正
-- `:green_heart:`: CI ビルドを修正
-- `:arrow_down:`: 依存関係をダウングレード
-- `:arrow_up:`: 依存関係をアップグレード
-- `:pushpin:`: 依存関係を特定のバージョンに固定
-- `:construction_worker:`: CI ビルドシステムを追加または更新
-- `:chart_with_upwards_trend:`: 分析コードやトラッキングコードを追加または更新
-- `:recycle:`: コードをリファクタリング
-- `:heavy_plus_sign:`: 依存関係を追加
-- `:heavy_minus_sign:`: 依存関係を削除
-- `:wrench:`: 設定ファイルを追加または更新
-- `:hammer:`: 開発スクリプトを追加または更新
-- `:pencil2:`: タイプミスを修正
-- `:alien:`: 外部 API の変更によるコード更新
-- `:truck:`: リソース（ファイル、パス、ルートなど）の移動または名前変更
-- `:page_facing_up:`: ライセンスを追加または更新
-- `:boom:`: 破壊的変更を導入
-- `:bulb:`: ソースコード内のコメントを追加または更新
-- `:card_file_box:`: データベース関連の変更を実行
-- `:loud_sound:`: ログを追加または更新
-- `:mute:`: ログを削除
-- `:building_construction:`: アーキテクチャの変更を実施
-- `:clown_face:`: モックの実装
-- `:see_no_evil:`: .gitignore ファイルを追加または更新
-- `:alembic:`: 実験的な変更を実施
-- `:label:`: 型を追加または更新
-- `:triangular_flag_on_post:`: 機能フラグを追加、更新、または削除
-- `:goal_net:`: エラーをキャッチ
-- `:wastebasket:`: クリーンアップが必要な非推奨コードに対応
-- `:passport_control:`: 認可、ロール、権限に関するコードの作業
-- `:adhesive_bandage:`: 重要でない問題の簡単な修正
-- `:coffin:`: デッドコードを削除
-- `:test_tube:`: 失敗するテストを追加
-- `:necktie:`: ビジネスロジックを追加または更新
-- `:stethoscope:`: ヘルスチェックを追加または更新
-- `:bricks:`: インフラストラクチャ関連の変更
-- `:technologist:`: 開発者体験を改善
-- `:thread:`: マルチスレッドまたは並行処理に関するコードを追加または更新
-- `:safety_vest:`: バリデーションに関するコードを追加または更新
+- `:art:`: Improve code structure/format
+- `:zap:`: Improve performance
+- `:fire:`: Remove code or files
+- `:bug:`: Fix a bug
+- `:ambulance:`: Critical hotfix
+- `:sparkles:`: Introduce new features
+- `:memo:`: Add or update documentation
+- `:lipstick:`: Add or update UI and style files
+- `:white_check_mark:`: Add, update, or pass tests
+- `:lock:`: Fix security or privacy issues
+- `:rotating_light:`: Fix compiler/linter warnings
+- `:green_heart:`: Fix CI build
+- `:arrow_down:`: Downgrade dependencies
+- `:arrow_up:`: Upgrade dependencies
+- `:pushpin:`: Pin dependencies to specific versions
+- `:construction_worker:`: Add or update CI build system
+- `:chart_with_upwards_trend:`: Add or update analytics or tracking code
+- `:recycle:`: Refactor code
+- `:heavy_plus_sign:`: Add a dependency
+- `:heavy_minus_sign:`: Remove a dependency
+- `:wrench:`: Add or update configuration files
+- `:hammer:`: Add or update development scripts
+- `:pencil2:`: Fix typos
+- `:alien:`: Update code due to external API changes
+- `:truck:`: Move or rename resources (files, paths, routes, etc.)
+- `:page_facing_up:`: Add or update license
+- `:boom:`: Introduce breaking changes
+- `:bulb:`: Add or update comments in source code
+- `:card_file_box:`: Perform database related changes
+- `:loud_sound:`: Add or update logs
+- `:mute:`: Remove logs
+- `:building_construction:`: Make architectural changes
+- `:clown_face:`: Implement mock
+- `:see_no_evil:`: Add or update .gitignore file
+- `:alembic:`: Perform experimental changes
+- `:label:`: Add or update types
+- `:triangular_flag_on_post:`: Add, update, or remove feature flags
+- `:goal_net:`: Catch errors
+- `:wastebasket:`: Address deprecated code that needs to be cleaned up
+- `:passport_control:`: Work on code related to authorization, roles, and permissions
+- `:adhesive_bandage:`: Simple fix for a non-critical issue
+- `:coffin:`: Remove dead code
+- `:test_tube:`: Add a failing test
+- `:necktie:`: Add or update business logic
+- `:stethoscope:`: Add or update health check
+- `:bricks:`: Infrastructure related changes
+- `:technologist:`: Improve developer experience
+- `:thread:`: Add or update code related to multithreading or concurrency
+- `:safety_vest:`: Add or update code related to validation
 
-## プルリクエストの例
+## Pull Request Example
 
 ```markdown
-## 変更点
+## Changes
 
-- neverthrow ライブラリの導入
-- API クライアントでの Result 型の使用
-- エラーケースの型定義
-- テストケースの追加
+- Introduction of neverthrow library
+- Use of Result type in API client
+- Type definition for error cases
+- Addition of test cases
 
-## 動作確認結果
+## Confirmation Results
 
-<!-- 動作確認の前提条件、手順、結果があれば記載する -->
+<!-- Describe preconditions, steps, and results of confirmation if any -->
 
-## レビューポイント
+## Review Points
 
-- Result 型の使用方法が適切か
-- エラーケースの網羅性
-- テストの十分性
+- Is the Result type used appropriately?
+- Comprehensiveness of error cases
+- Sufficiency of tests
 
-## 制限事項
+## Limitations
 
-<!-- 本変更での既知の制限や別 PR での対応事項があれば記載する -->
+<!-- Describe known limitations of this change or items to be addressed in a separate PR if any -->
 ```

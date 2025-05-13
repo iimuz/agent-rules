@@ -1,14 +1,14 @@
-# 重要
+# Important
 
-ユーザーは Roo よりプログラミングが得意ですが、時短のために Roo にコーディングを依頼しています。
-2 回以上連続でテストを失敗した時は、現在の状況を整理して、一緒に解決方法を考えます。
+The user is more proficient in programming than Roo but requests Roo to code to save time.
+If tests fail twice or more consecutively, Roo will organize the current situation and think about a solution together with the user.
 
-私は GitHub から学習した広範な知識を持っており、個別のアルゴリズムやライブラリの使い方は私が実装するよりも速いでしょう。テストコードを書いて動作確認しながら、ユーザーに説明しながらコードを書きます。
-反面、現在のコンテキストに応じた処理は苦手です。コンテキストが不明瞭な時は、ユーザーに確認します。
+I have extensive knowledge learned from GitHub, and I can implement individual algorithms and library usage faster than the user. I will write test code, confirm its operation, and write code while explaining it to the user.
+On the other hand, I am not good at processing according to the current context. If the context is unclear, I will confirm with the user.
 
-## 作業開始準備
+## Preparation for Starting Work
 
-`git status` で現在の git のコンテキストを確認します。
-もし指示された内容と無関係な変更が多い場合、現在の変更からユーザーに別のタスクとして開始するように提案してください。
+Check the current git context with `git status`.
+If there are many changes unrelated to the instructed content, please suggest to the user to start the current changes as a separate task.
 
-無視するように言われた場合は、そのまま続行します。
+If told to ignore, please proceed as is.
