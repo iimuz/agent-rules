@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#MISE description="Link instructions."
+#MISE description="Link agent rules."
 #USAGE flag "--dst <directory>" help="destination directory."
 #
 # フォルダにあるルールファイルを各リポジトリにsymlinkでリンクする。
@@ -51,6 +51,8 @@ if [[ ! -d "$DST_VSCODE_COPILOT" ]]; then
   mkdir "$DST_VSCODE_COPILOT"
 fi
 _symlink_file "$SRC/.github/copilot-instructions.md" "$DST_VSCODE_COPILOT/copilot-instructions.md"
+_symlink_dir "$SRC/.github/instructions" "$DST_VSCODE_COPILOT/instructions"
+_symlink_dir "$SRC/.github/prompts" "$DST_VSCODE_COPILOT/prompts"
 
 echo "link aider settings..."
 _symlink_file "$SRC/.aider.conf.yml" "$DST/.aider.conf.yml"
