@@ -23,6 +23,7 @@ echo "target directory: $TARGET"
 
 echo "unlink cline rules..."
 _unlink "$TARGET/.clinerules"
+_unlink "$TARGET/.clineignore"
 
 echo "unlink vscode github copilot instructions..."
 _unlink "$TARGET/.github/copilot-instructions.md"

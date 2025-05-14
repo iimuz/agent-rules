@@ -44,6 +44,7 @@ echo "destination directory: $DST"
 
 echo "link cline rules..."
 _symlink_dir "$SRC/.clinerules" "$DST/.clinerules"
+_symlink_file "$SRC/.clineignore" "$DST/.clineignore"
 
 echo "link vscode github copilot instructions..."
 readonly DST_VSCODE_COPILOT="$DST/.github"
