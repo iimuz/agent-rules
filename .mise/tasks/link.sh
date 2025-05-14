@@ -51,3 +51,6 @@ if [[ ! -d "$DST_VSCODE_COPILOT" ]]; then
   mkdir "$DST_VSCODE_COPILOT"
 fi
 _symlink_file "$SRC/.github/copilot-instructions.md" "$DST_VSCODE_COPILOT/copilot-instructions.md"
+
+echo "link aider settings..."
+_symlink_file "$SRC/.aider.conf.yml" "$DST/.aider.conf.yml"
