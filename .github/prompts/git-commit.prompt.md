@@ -54,6 +54,7 @@ Follow these steps when creating commits:
    - Do not include unrelated files
    - Do not create empty commits
    - Do not change git settings
+   - Use formal written language for commit messages.
 3. Operations to Avoid
    - Using interactive git commands (-i flag)
    - Pushing directly to the remote repository
