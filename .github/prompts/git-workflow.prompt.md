@@ -1,3 +1,9 @@
+---
+mode: "agent"
+tools: []
+description: "Git workflow"
+---
+
 # Git Workflow
 
 This document describes best practices for creating commits and pull requests.
