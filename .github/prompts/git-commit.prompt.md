@@ -4,9 +4,10 @@ tools: ["git_commit", "git_diff", "git_diff_staged", "git_log", "git_show"]
 description: "Git workflow"
 ---
 
-# Git Workflow
+## Summary
 
-This document describes best practices for creating commits and pull requests.
+This document describes best practices for creating git commits.
+Although examples are shown using git commands, please use tools if available.
 
 ## Creating Commits
 
@@ -15,11 +16,8 @@ Follow these steps when creating commits:
 1. Confirm Changes
 
    ```bash
-   # Check untracked files and changes
-   git status
-
    # Check details of changes
-   git diff
+   git diff --staged
 
    # Check commit message style
    git log
@@ -38,9 +36,6 @@ Follow these steps when creating commits:
 4. Execute Commit
 
    ```bash
-   # Stage only relevant files
-   git add <files>
-
    # Create commit message (using HEREDOC)
    git commit -m "$(cat <<'EOF'
    :art: Introduce Result type for user authentication
@@ -48,64 +43,6 @@ Follow these steps when creating commits:
    - Make error handling more type-safe
    - Enforce explicit handling of error cases
    - Improve tests
-
-   🤖 Generated with ${K4}
-   Co-Authored-By: Claude noreply@anthropic.com
-   EOF
-   )"
-   ```
-
-## Creating Pull Requests
-
-Follow these steps when creating pull requests:
-
-1. Check Branch Status
-
-   ```bash
-   # Check for uncommitted changes
-   git status
-
-   # Check changes
-   git diff
-
-   # Check differences from main
-   git diff develop...HEAD
-
-   # Check commit history
-   git log
-   ```
-
-2. Analyze Changes
-   - Check all commits since branching from develop
-   - Understand the nature and purpose of the changes
-   - Evaluate the impact on the project
-   - Check for sensitive information
-3. Create Pull Request
-
-   ```bash
-   # Create pull request (using HEREDOC)
-   gh pr create --title ":art: Improve error handling with Result type" --body "$(cat <<'EOF'
-   ## Related URLs
-
-   ## Changes
-
-   - Introduction of Result type using neverthrow
-   - Explicit type definition for error cases
-   - Addition of test cases
-
-   ## Confirmation Results
-
-   <!-- Describe preconditions, steps, and results of confirmation if any -->
-
-   ## Review Points
-
-   - Is the Result type used appropriately?
-   - Comprehensiveness of error cases
-   - Sufficiency of tests
-
-   ## Limitations
-
-   <!-- Describe known limitations of this change or items to be addressed in a separate PR if any -->
    EOF
    )"
    ```
@@ -117,11 +54,6 @@ Follow these steps when creating pull requests:
    - Do not include unrelated files
    - Do not create empty commits
    - Do not change git settings
-2. Pull Request Related
-   - Create a new branch if necessary
-   - Commit changes appropriately
-   - Use the `-u` flag when pushing to remote
-   - Analyze all changes
 3. Operations to Avoid
    - Using interactive git commands (-i flag)
    - Pushing directly to the remote repository
@@ -200,28 +132,3 @@ Use the following prefixes:
 - `:technologist:`: Improve developer experience
 - `:thread:`: Add or update code related to multithreading or concurrency
 - `:safety_vest:`: Add or update code related to validation
-
-## Pull Request Example
-
-```markdown
-## Changes
-
-- Introduction of neverthrow library
-- Use of Result type in API client
-- Type definition for error cases
-- Addition of test cases
-
-## Confirmation Results
-
-<!-- Describe preconditions, steps, and results of confirmation if any -->
-
-## Review Points
-
-- Is the Result type used appropriately?
-- Comprehensiveness of error cases
-- Sufficiency of tests
-
-## Limitations
-
-<!-- Describe known limitations of this change or items to be addressed in a separate PR if any -->
-```
