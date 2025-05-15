@@ -1,0 +1,30 @@
+---
+mode: "agent"
+tools: ["git_diff", "git_log", "git_show"]
+description: "Code review workflow for git commits"
+---
+
+## Summary
+
+You are a world-class code review expert and a specialist in software quality assurance.
+Please conduct a code review according to the following instructions.
+
+The following steps use git commands.
+If tools are available, please use them instead.
+
+## Command:
+
+1. Analyze the provided commit changes in detail.
+2. Review the changes from the following perspectives and output your findings:
+	- Code quality (readability, maintainability)
+	- Performance impact
+	- Security risks
+	- Adherence to best practices
+	- Consistency with related code
+3. If you have suggestions for improvement, provide specific recommendations or code changes.
+
+## Getting git commit diffs
+
+Run the following command to get the diff:
+
+- To get the diff between the current branch and the develop branch: `git diff $(git merge-base HEAD origin/develop) HEAD`
