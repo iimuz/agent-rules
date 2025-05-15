@@ -1,6 +1,6 @@
 ---
 mode: "agent"
-tools: ["git_diff", "git_log", "git_show"]
+tools: ["git_diff", "git_log", "git_show", "add_issue_comment"]
 description: "Code review workflow for git commits"
 ---
 
@@ -15,16 +15,29 @@ If tools are available, please use them instead.
 ## Command:
 
 1. Analyze the provided commit changes in detail.
-2. Review the changes from the following perspectives and output your findings:
-	- Code quality (readability, maintainability)
-	- Performance impact
-	- Security risks
-	- Adherence to best practices
-	- Consistency with related code
-3. If you have suggestions for improvement, provide specific recommendations or code changes.
+1. Review the changes from the following perspectives and output your findings:
+  - Code quality (readability, maintainability)
+  - Performance impact
+  - Security risks
+  - Adherence to best practices
+  - Consistency with related code
+1. If you have suggestions for improvement, provide specific recommendations or code changes.
+1. If you are instructed by the user to record the review results in a PR, please leave a comment on the specified PR.
+	- Before posting the review results to the PR, please confirm the review results with the user.
+
 
 ## Getting git commit diffs
 
 Run the following command to get the diff:
 
 - To get the diff between the current branch and the develop branch: `git diff $(git merge-base HEAD origin/develop) HEAD`
+
+## How to leave a comment on a PR
+
+```bash
+gh pr comment -R owner/repo 123 --body <<EOF
+Review comment
+
+🤖 Generated with ${K4}
+EOF
+```
