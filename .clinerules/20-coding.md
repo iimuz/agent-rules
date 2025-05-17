@@ -1,114 +1,114 @@
-# コーディングプラクティス
+# Coding Practices
 
-## 原則
+## Principles
 
-### 関数型アプローチ (FP)
+### Functional Approach (FP)
 
-- 純粋関数を優先
-- 不変データ構造を使用
-- 副作用を分離
-- 型安全性を確保
+- Prioritize pure functions
+- Use immutable data structures
+- Isolate side effects
+- Ensure type safety
 
-### ドメイン駆動設計 (DDD)
+### Domain-Driven Design (DDD)
 
-- 値オブジェクトとエンティティを区別
-- 集約で整合性を保証
-- リポジトリでデータアクセスを抽象化
-- 境界付けられたコンテキストを意識
+- Distinguish between Value Objects and Entities
+- Ensure consistency with Aggregates
+- Abstract data access with Repositories
+- Be aware of Bounded Contexts
 
-### テスト駆動開発 (TDD)
+### Test-Driven Development (TDD)
 
-- Red-Green-Refactor サイクル
-- テストを仕様として扱う
-- 小さな単位で反復
-- 継続的なリファクタリング
+- Red-Green-Refactor cycle
+- Treat tests as specifications
+- Iterate in small units
+- Continuous refactoring
 
-## 実装パターン
+## Implementation Patterns
 
-### 型定義
+### Type Definitions
 
 ```typescript
-// ブランデッド型で型安全性を確保
+// Ensure type safety with Branded Types
 type Branded<T, B> = T & { _brand: B };
 type Money = Branded<number, "Money">;
 type Email = Branded<string, "Email">;
 ```
 
-### 値オブジェクト
+### Value Objects
 
-- 不変
-- 値に基づく同一性
-- 自己検証
-- ドメイン操作を持つ
+- Immutable
+- Identity based on value
+- Self-validating
+- Have domain operations
 
 ```typescript
-// 作成関数はバリデーション付き
+// Creation function with validation
 function createMoney(amount: number): Result<Money, Error> {
-  if (amount < 0) return err(new Error("負の金額不可"));
+  if (amount < 0) return err(new Error("Negative amounts not allowed"));
   return ok(amount as Money);
 }
 ```
 
-### エンティティ
+### Entities
 
-- ID に基づく同一性
-- 制御された更新
-- 整合性ルールを持つ
+- Identity based on ID
+- Controlled updates
+- Have consistency rules
 
-### Result 型
+### Result Type
 
 ```typescript
 type Result<T, E> = { ok: true; value: T } | { ok: false; error: E };
 ```
 
-- 成功/失敗を明示
-- 早期リターンパターンを使用
-- エラー型を定義
+- Explicitly indicate success/failure
+- Use early return pattern
+- Define error types
 
-### リポジトリ
+### Repositories
 
-- ドメインモデルのみを扱う
-- 永続化の詳細を隠蔽
-- テスト用のインメモリ実装を提供
+- Deal only with the domain model
+- Hide persistence details
+- Provide in-memory implementations for testing
 
-### アダプターパターン
+### Adapter Pattern
 
-- 外部依存を抽象化
-- インターフェースは呼び出し側で定義
-- テスト時は容易に差し替え可能
+- Abstract external dependencies
+- Interfaces defined by the caller
+- Easily replaceable during testing
 
-## 実装手順
+## Implementation Steps
 
-1. **型設計**
-   - まず型を定義
-   - ドメインの言語を型で表現
-2. **純粋関数から実装**
-   - 外部依存のない関数を先に
-   - テストを先に書く
-3. **副作用を分離**
-   - IO 操作は関数の境界に押し出す
-   - 副作用を持つ処理を Promise でラップ
-4. **アダプター実装**
-   - 外部サービスや DB へのアクセスを抽象化
-   - テスト用モックを用意
+1. **Type Design**
+   - Define types first
+   - Express domain language with types
+2. **Implement Pure Functions First**
+   - Implement functions without external dependencies first
+   - Write tests first
+3. **Isolate Side Effects**
+   - Push IO operations to the boundaries of functions
+   - Wrap processes with side effects in Promises
+4. **Adapter Implementation**
+   - Abstract access to external services or DBs
+   - Prepare mocks for testing
 
-## プラクティス
+## Practices
 
-- 小さく始めて段階的に拡張
-- 過度な抽象化を避ける
-- コードよりも型を重視
-- 複雑さに応じてアプローチを調整
+- Start small and expand incrementally
+- Avoid excessive abstraction
+- Prioritize types over code
+- Adjust approach according to complexity
 
-## コードスタイル
+## Code Style
 
-- 関数優先（クラスは必要な場合のみ）
-- 不変更新パターンの活用
-- 早期リターンで条件分岐をフラット化
-- エラーとユースケースの列挙型定義
+- Prefer functions (use classes only when necessary)
+- Utilize immutable update patterns
+- Flatten conditional branches with early returns
+- Define enums for errors and use cases
 
-## テスト戦略
+## Test Strategy
 
-- 純粋関数の単体テストを優先
-- インメモリ実装によるリポジトリテスト
-- テスト可能性を設計に組み込む
-- アサートファースト：期待結果から逆算
+- Prioritize unit tests for pure functions
+- Repository tests with in-memory implementations
+- Incorporate testability into design
+- Assert-first: work backward from expected results

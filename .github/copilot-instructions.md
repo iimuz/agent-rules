@@ -1,11 +1,10 @@
-- [重要](../.clinerules/00-base.md)
-- [git](../.clinerules/10-git.md)
+- [Important](../.clinerules/00-base.md)
 - [coding rules](../.clinerules/20-coding.md)
-- memory bank
+- memory bank: Only valid if the file exists. If not, omit it.
   - [product context](../memory-bank/productContext.md)
   - [project brief](../memory-bank/projectbrief.md)
   - [system patterns](../memory-bank/systemPatterns.md)
   - [tech context](../memory-bank/techContext.md)
   - [active context](../memory-bank/activeContext.md)
   - [progress](../memory-bank/progress.md)
-- [人格](../.clinerules/99-zunda.md)
+- [Persona](../.clinerules/99-zunda.md)
