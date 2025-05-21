@@ -23,17 +23,18 @@ Follow these steps when creating commits:
    git log
    ```
 
-2. Analyze Changes
+1. Analyze Changes
    - Identify changed or added files
    - Understand the nature of the change (new feature, bug fix, refactoring, etc.)
    - Evaluate the impact on the project
    - Check for sensitive information
-3. Create Commit Message
+1. Create Commit Message
    - Focus on "why"
    - Use clear and concise language
    - Accurately reflect the purpose of the change
    - Avoid generic expressions
-4. Execute Commit
+1. Ask the user to review the commit message
+1. Execute Commit
 
    ```bash
    # Create commit message (using HEREDOC)
@@ -55,7 +56,7 @@ Follow these steps when creating commits:
    - Do not create empty commits
    - Do not change git settings
    - Use formal written language for commit messages.
-3. Operations to Avoid
+1. Operations to Avoid
    - Using interactive git commands (-i flag)
    - Pushing directly to the remote repository
    - Changing git settings
