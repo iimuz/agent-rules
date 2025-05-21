@@ -16,15 +16,16 @@ If tools are available, please use them instead.
 
 1. Analyze the provided commit changes in detail.
 1. Review the changes from the following perspectives and output your findings:
-  - Code quality (readability, maintainability)
-  - Performance impact
-  - Security risks
-  - Adherence to best practices
-  - Consistency with related code
+
+- Code quality (readability, maintainability)
+- Performance impact
+- Security risks
+- Adherence to best practices
+- Consistency with related code
+
 1. If you have suggestions for improvement, provide specific recommendations or code changes.
 1. If you are instructed by the user to record the review results in a PR, please leave a comment on the specified PR.
-	- Before posting the review results to the PR, please confirm the review results with the user.
-
+   - Before posting the review results to the PR, please confirm the review results with the user.
 
 ## Getting git commit diffs
 
