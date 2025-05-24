@@ -14,17 +14,17 @@ Automatically extract, split, link, and consolidate concise memos under the "Mob
 1. For each extracted item, leave only a link in the original file directly under "Mobile First Daily Interface" in the format: `- time [title](basename)`.
 1. Each zettelkasten file must have the following frontmatter:
 
-  ```yml
-  title: Insert an appropriate title for each file
-  description: Add a concise description
-  date: File creation time in epoch time seconds
-  lastmod: Last modified time in epoch time seconds
-  expiryDate: One week after lastmod in epoch time seconds
-  draft: false
-  tags: []
-  categories:
-    - fleeting or literature
-  ```
+```yml
+title: Insert an appropriate title for each file
+description: Add a concise description
+date: File creation time in epoch time seconds
+lastmod: Last modified time in epoch time seconds
+expiryDate: One week after lastmod in epoch time seconds
+draft: false
+tags: []
+categories:
+  - fleeting or literature
+```
 
 1. If there are duplicate or consecutive memos with similar content, consolidate them into a single zettelkasten file and leave only one link in the original file.
 1. Delete the original consolidated files, leaving only a notice or removing them entirely.
@@ -35,7 +35,7 @@ Automatically extract, split, link, and consolidate concise memos under the "Mob
 
 - 09:26:28 [Task Management Method](dummy-20250522092628)
 - 09:27:56 [New LLM Model Release Info](dymmy-20250522092756)
-...
+  ...
 
 ## Notes
 
