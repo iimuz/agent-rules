@@ -3,6 +3,5 @@
 #
 # 依存関係のバージョンアップを行うスクリプト。
 
-npm install --include=dev cspell@latest prettier@latest
-dprint config update
-
+npm install --include=dev cspell@latest dprint@latest prettier@latest
+npx dprint config update
