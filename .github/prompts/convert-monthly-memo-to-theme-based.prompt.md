@@ -53,26 +53,38 @@ Follow the above process to handle the provided monthly memo. Execute the steps 
 ### Execution Order
 
 1. Extract the list of themes from the monthly memo
-  - Display the extracted list of themes
-  - Explain the classification reason for each theme
+
+- Display the extracted list of themes
+- Explain the classification reason for each theme
+
 1. Check the existing theme index file
-  - Confirm the existence of the file
-  - Display the list of existing themes
+
+- Confirm the existence of the file
+- Display the list of existing themes
+
 1. Compare themes and decide processing policy
-  - Show the result of new/existing determination
-  - Clearly state the processing policy for each theme
+
+- Show the result of new/existing determination
+- Clearly state the processing policy for each theme
+
 1. Create or update theme files
-  - List files to be newly created
-  - Show the content to be appended to existing files
+
+- List files to be newly created
+- Show the content to be appended to existing files
+
 1. Update the theme index file
-  - Show entries to be added/updated
-  - Present the final theme index file
+
+- Show entries to be added/updated
+- Present the final theme index file
+
 1. Transform the structure of the monthly memo
-  - Show the transformed main monthly memo
+
+- Show the transformed main monthly memo
 
 ### Deliverables
 
 After completing each step, provide:
+
 - Explanation of the processing result for each step
 - Content of created/updated files
 - Reasons for changes and scope of impact
@@ -196,7 +208,6 @@ Describe the purpose and background of this theme.
 - YYYY-MM-DD [Specific Action or Achievement](basename)
   - Detailed description of this action
   - Results or learnings obtained
-
 
 ## 関連する単発活動
 

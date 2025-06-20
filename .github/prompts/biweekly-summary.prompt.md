@@ -13,22 +13,22 @@ It also fully automates the process of extracting categorized memos, converting 
 ## Procedure
 
 1. Collect and Integrate Memo Lists by Category
-    1. Extract all note links from the "Memo List by Category" section in the weekly memos for the past two weeks.
-    1. Standardize note links in the format: `- YYYY-MM-DD [Title](basename)`.
-    1. Group the extracted note links by category and summarize the content for each category.
-    1. Adjust category granularity by merging related topics and avoiding excessive fragmentation.
-    1. Create new categories as needed, and split categories if the content is too large.
+   1. Extract all note links from the "Memo List by Category" section in the weekly memos for the past two weeks.
+   1. Standardize note links in the format: `- YYYY-MM-DD [Title](basename)`.
+   1. Group the extracted note links by category and summarize the content for each category.
+   1. Adjust category granularity by merging related topics and avoiding excessive fragmentation.
+   1. Create new categories as needed, and split categories if the content is too large.
 1. Theme-Based Conversion and Timeline Update
-    1. Convert the categorized memo list into a theme-based hierarchical structure for the sprint (biweekly) review.
-    1. For each theme, update or create a timeline file, appending the relevant memos in chronological order under the appropriate section (e.g., "開発ストーリー").
-    1. If a theme is new, create a new timeline file and add it to the theme index file.
-    1. Update the theme index file to reflect new or updated themes and their summaries.
-    1. Remove the "Memo List by Category" section from the sprint memo after all memos are reflected in theme timelines.
+   1. Convert the categorized memo list into a theme-based hierarchical structure for the sprint (biweekly) review.
+   1. For each theme, update or create a timeline file, appending the relevant memos in chronological order under the appropriate section (e.g., "開発ストーリー").
+   1. If a theme is new, create a new timeline file and add it to the theme index file.
+   1. Update the theme index file to reflect new or updated themes and their summaries.
+   1. Remove the "Memo List by Category" section from the sprint memo after all memos are reflected in theme timelines.
 1. Sprint Summary Generation and Integration
-    1. Analyze activity records, personal notes, and weekly memos from the past two weeks, and create a sprint summary in the specified format below.
-    1. Integrate the summary into the sprint memo as the main review section (replace any previous summary sections).
-    1. If there are references, clearly indicate them in the `[Title](link)` format (without file extensions).
-    1. When outputting in Markdown, use `1.` for all numbered lists.
+   1. Analyze activity records, personal notes, and weekly memos from the past two weeks, and create a sprint summary in the specified format below.
+   1. Integrate the summary into the sprint memo as the main review section (replace any previous summary sections).
+   1. If there are references, clearly indicate them in the `[Title](link)` format (without file extensions).
+   1. When outputting in Markdown, use `1.` for all numbered lists.
 
 ## Output Format
 
@@ -46,7 +46,7 @@ It also fully automates the process of extracting categorized memos, converting 
 ### 継続テーマ
 
 1. [Theme name](theme-file-link): Progress summary (1-2 lines)
-    1. Main progress this sprint
+   1. Main progress this sprint
 
 ### 完了テーマ
 

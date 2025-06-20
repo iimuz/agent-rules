@@ -22,9 +22,11 @@ Please strictly follow these rules for Markdown output:
 - This ensures that the correct sequence is rendered automatically and makes it easier to add or remove items later.
 
 ### Emphasis
+
 - Minimize the use of emphasis (bold, italics).
 - Instead, use headings to structure the document.
 
 ### Document Structure
+
 - Organize content logically and use headings for clarity.
 - Use bullet points and numbered lists appropriately to improve readability.

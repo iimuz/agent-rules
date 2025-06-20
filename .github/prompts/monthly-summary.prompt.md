@@ -28,6 +28,7 @@ A concise headline and brief summary of the day.
 ### Incomplete Tasks and Planned Actions
 
 Focus on extracting tasks that require follow-up:
+
 - Tasks mentioned but not completed
 - Action items identified during meetings or work
 - PRs requiring review or approval
@@ -53,6 +54,7 @@ Focus on extracting tasks that require follow-up:
 ### Next Actions (Priority-Sorted)
 
 Categorize by urgency and importance:
+
 - Immediate (Today/Tomorrow): Critical tasks with deadlines
 - This Week: Important tasks that need attention soon
 - Follow-up Required: Items waiting for others or requiring coordination

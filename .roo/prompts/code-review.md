@@ -22,12 +22,16 @@ Present the final review in Japanese.
 ## Procedure
 
 1. Analyze the specified diff or changes in detail.
-  - *new_task
-    - mode: code
-  - *execute_command
+
+- *new_task
+  - mode: code
+- *execute_command
+
 2. Create a subtask for each perspective and conduct the review for each.
-  - *new_task
-    - mode: code
+
+- *new_task
+  - mode: code
+
 3. Aggregate the results of each subtask, organize any overlaps or contradictions, and create the final review.
 4. Summarize the final review concisely and specifically in Japanese.
 5. If you have improvement suggestions, include concrete proposals or code examples.

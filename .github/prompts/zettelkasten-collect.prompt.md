@@ -28,11 +28,13 @@ The goal is to consolidate scattered notes into a coherent monthly summary with 
 ## Category Organization Guidelines
 
 ### Consolidation Criteria
+
 - Combine categories with fewer than 3-5 items unless they represent distinct domains
 - Merge closely related technical topics (e.g., LLM + Local LLM → AI and Machine Learning)
 - Group lifestyle and consumer products together (e.g., Bag + Water Bottle → Daily Items & Lifestyle)
 
 ### Granularity Guidelines
+
 - Each category should be substantial enough to warrant a separate zettelkasten file
 - Categories should have coherent themes that enable meaningful synthesis
 - Avoid overly specific categories that would result in fragmented knowledge
