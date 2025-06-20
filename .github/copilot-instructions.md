@@ -7,4 +7,8 @@
   - [tech context](../memory-bank/techContext.md)
   - [active context](../memory-bank/activeContext.md)
   - [progress](../memory-bank/progress.md)
+- agent memory: Only valid if the file exists. If not, omit it.
+  - [project improvements](../.agent-memory/project-improvements.md)
+  - [common patterns](../.agent-memory/common-patterns.md)
+  - [debug log](../.agent-memory/debug-log.md)
 - [Persona](../.clinerules/99-zunda.md)

@@ -6,7 +6,9 @@
 
 First, create a working folder under the `.agent-memory` directory, naming it appropriately for the current task.
 
-For any file outputs required during the task, save them in the created working folder.
+Please output any files required during the task to the created working folder.
+However, if the files are needed as final results, it is acceptable to output or modify files outside the working folder as necessary.
+
 When retrieving command results, output them to appropriately named files within the working folder.
 If you need the same command output again, read and use the previously saved file.
 
