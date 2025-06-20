@@ -1,6 +1,6 @@
 ---
 mode: "agent"
-tools: ["git_diff", "git_log", "git_show", "add_issue_comment"]
+tools: ["editFiles", "git_diff", "git_log", "git_show", "add_issue_comment", "get_pull_request",  "get_pull_request_comments", "get_pull_request_files", "get_pull_request_reviews", "get_pull_request_status"]
 description: "Code review workflow for git commits"
 ---
 

@@ -42,9 +42,14 @@ readonly SRC=$(realpath $SCRIPT_DIR/../..)
 echo "source directory : $SRC"
 echo "destination directory: $DST"
 
-echo "link cline rules..."
+echo "link cline..."
 _symlink_dir "$SRC/.clinerules" "$DST/.clinerules"
 _symlink_file "$SRC/.clineignore" "$DST/.clineignore"
+
+echo "link roo code..."
+_symlink_dir "$SRC/.roo" "$DST/.roo"
+_symlink_file "$SRC/.roomodes" "$DST/.roomodes"
+_symlink_file "$SRC/.rooignore" "$DST/.rooignore"
 
 echo "link vscode github copilot instructions..."
 readonly DST_VSCODE_COPILOT="$DST/.github"
